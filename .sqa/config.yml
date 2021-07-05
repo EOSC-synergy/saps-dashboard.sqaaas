@@ -1,0 +1,23 @@
+config:
+  credentials:
+  - id: synergy_dockerhub_bot_pass
+    password_var: JPL_DOCKERPASS
+    username_var: JPL_DOCKERUSER
+  project_repos: {}
+environment:
+  JPL_DOCKERPUSH: saps-dashboard
+sqa_criteria:
+  qc_doc:
+    repos:
+      this_repo:
+        commands:
+        - pip install recommonmark
+        - make html -C docs/
+        container: saps-dashboard
+  qc_style:
+    repos:
+      this_repo:
+        commands:
+        - hadolint docker/Dockerfile
+        container: saps-hadolint
+timeout: 600
