@@ -18,6 +18,7 @@ sqa_criteria:
     repos:
       this_repo:
         commands:
-        - hadolint docker/Dockerfile
+        - 'hadolint --ignore DL3008 --ignore DL3009 --ignore DL3016 --ignore DL3015
+          docker/Dockerfile '
         container: saps-hadolint
 timeout: 600
