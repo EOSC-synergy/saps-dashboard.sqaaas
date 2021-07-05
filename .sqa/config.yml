@@ -13,7 +13,7 @@ sqa_criteria:
         commands:
         - pip install recommonmark
         - make html -C docs/
-        container: saps-dashboard
+        container: saps-dashboard-docs
   qc_style:
     repos:
       this_repo:
